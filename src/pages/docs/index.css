@@ -1,0 +1,45 @@
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+.heroBanner {
+  padding: 4rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    padding: 2rem;
+  }
+}
+
+.bodyWrap {
+  display: flex;
+}
+
+
+.content{
+  flex:1;
+  overflow: hidden;
+}
+.introduction-section{
+  display: none;
+}
+
+.footer{
+  position: relative;
+  z-index: 1;
+}
+
+.shopeefoodDocWrap .show-api-client-button,.shopeefoodDocWrap .introduction-cards{
+  display: none!important;
+}
+.shopeefoodDocWrap .section-container[data-v-b630668c]{
+  padding: 0!important;
+}
+.activeNav a{
+  color:red
+}

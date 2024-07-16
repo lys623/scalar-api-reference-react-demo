@@ -1,0 +1,80 @@
+# GFM
+
+## Autolink literals
+
+www.example.com, https://example.com, and contact@example.com.
+
+## Footnote
+
+A note[^1]
+
+[^1]: Big note.
+
+## Strikethrough
+
+~one~ or ~~two~~ tildes.
+
+## Table
+
+| foo | bar | bar | bar | 
+| --- | --- |--- |--- |
+| Delivery_OnDemand_GrabApp <font color="Blue" bgcolor="yellow">我是蓝色</font> | Delivery <table><tr><td bgcolor="yellow">背景色yellow</td></tr></table> |Instant | Grab App |
+
+Service Based Menu has the following rules:
+
+* When advancedPricing is not defined, default item/modifier price will be applied.
+* purchasability is set to true by default for all service type, unless it is explicitly set to false.
+* Defining purchasability for modifier is not applicable, it will reuse item's purchasability.
+
+## Tasklist
+
+* [ ] to do
+* [x] done
+
+
+# Menu Translation Overview
+```json 
+"categories": [
+    {
+        ...
+        "nameTranslation": {
+            "en": "category_name_translation"
+        },
+        "items": [
+            {
+                ...
+                "nameTranslation": {
+                    "en": "item_name_translation"
+                },
+                "descriptionTranslation": {
+                    "en": "item_description_translation"
+                },
+                "modifierGroups": [
+                    {
+                        ...
+                        "nameTranslation": {
+                            "en": "modifierGroup_name_translation"
+                        },
+                        "modifiers": [
+                            {
+                                ...
+                                "nameTranslation": {
+                                    "en": "modifier_name_translation"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]
+```
+![Alt text](https://developer.grab.com/docs/img/grabfood-v2/food-auth.png "title")
+
+```curl
+curl -X POST https://partner-api.stg-myteksi.com/grabfood-sandbox/partner/v1/order/state \
+  -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6Il9kZWZhdWx0IiwidHlwIjoiSldUIn0.eyJhdWQiOiI1NWRkNzEyZTViNWY0MDQyYTEzZjVkZTM0ZjM4NmVjMSIsImV4cCI6MTU2NDEzMjE0MSwiaWF0IjoxNTYzNTI3MzQxLCJpc3MiOiJodHRwczovL2lkcC5ncmFiLmNvbSIsImp0aSI6IkhOQkNHYlVtUzVtSGZHVmpndHM1bVEiLCJuYmYiOjE1NjM1MjcxNjEsInBpZCI6IjIwM2E5MmFmLTJmN2ItNDNjZS1hNTVmLTc5NGE4ZWQzZWE2NyIsInBzdCI6MSwic2NwIjoiW1wiZmExZWIyNDg5MjMwNDNjODlhNmQ5MTcwZGNlMzljNjFcIl0iLCJzdWIiOiJUV09fTEVHR0VEX09BVVRIIiwic3ZjIjoiIiwidGtfdHlwZSI6ImFjY2VzcyJ9.brZhpPvZSzGfnLml4uymoM-yWFepJ_cUxM92b4tNpf3gBTY_GlfgjRrZ0zMVzrwastzK0IEyKi1hP2T8E02-oQyC_iLIhNdS1y9b1wuEot8kC-eyuWer2kDxfzyrrelGXv3MGlb7aJ2I7_N29GzNsS_x9Qzl8BauMnrkL15Tn2JO-dza3TaswtegmNNKGh_O-fU-tWD1fxOc9WxGcQ47Y6T5glHz8qMD5ytyoh4zRZitAmG2BX5Ip1VE1acfoyxErmKAuhQLaGvFOSXo-x6F8YXTsHLtuqd9sUkIMx-JJIMOC4tqRTOwh5Qv4v0Q6GgFiQpmUljqsgBxy4Hlcj23Pw'\
+  -H 'Content-Type: application/json' \
+  -d '{"orderID":"91646057-CYUWL64UGF5XVA","toState":"Accepted"}'
+```
